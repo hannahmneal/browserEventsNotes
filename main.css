@@ -5,3 +5,19 @@
 .article-section {
     border: 1px solid gray;
 }
+
+.blue {
+    color: blue;
+}
+
+.large {
+    font-size: large;
+}
+
+.bordered {
+    border: 3px dashed red;
+}
+
+.rounded {
+    border: 
+}

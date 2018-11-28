@@ -40,3 +40,67 @@ for (let i= 0; i < articleEl.length; i++) {
 // function handleSectionClick (event) {
 //     console.log("Section was clicked", click, event.target.innerHTML);
 
+//      ***************                 After break         *************************
+
+
+let guineaPig = document.getElementById("guinea-pig")
+
+document.getElementById("add-color").addEventListener("click", function() {
+    guineaPig.classList.toggle("blue")
+})
+
+//document.getElementById("add-color") is the reference, .addEventListener....  is the instruction.
+
+document.getElementById("make-large").addEventListener("click", function() {
+    guineaPig.classList.toggle("large")
+})
+
+// Notice toggleClass in the following two examples:
+
+function toggleClass (newClass) {
+    guineaPig.classList.toggle(newClass)
+    console.log("guineaPig.classList", guineaPig.classList)
+}
+
+document.getElementById("add-border").addEventListener("click", function() {
+    toggleClass("bordered")
+})
+
+document.getElementById("add-rounding").addEventListener("click", function() {
+    toggleClass("rounded")
+})
+
+
+// EventListeners can be anywhere on a page but targets are specific to an element
+
+document.querySelector("body").addEventListener("click", function() {
+    //console.log(event.target, event.currentTarget);
+    console.log("Event target innerHTML: ", event.target.innerHTML);
+
+    let evntHTML = event.target.innerHTML;
+    if(evntHTML === "Add color") {
+        toggleClass("blue");
+    } else if (evntHTML === "Hulkify") {
+        toggleClass("large");
+    } else if (evntHTML === "Capture it") {
+        toggleClass("bordered");
+    } else if (evntHTML === "Rounded") {
+        toggleClass("rounded");
+    }
+})
+
+//Since all these have Ids, it would be better to use the ids. Here is how:
+
+//let eventID = event.target.id;
+// if(eventId === "maker-large") {
+//     toggleClass("blue");    
+//     } else if (eventId === "make-large") {
+//         toggleClass("large");
+//     } else if (eventId === "add-border") {
+//         toggleClass("bordered");
+//     } else if (eventId === "add-color") {
+//         toggleClass("blue");
+//     } else if (eventId === "add-rounding") {
+//         toggleClass("rounded");
+//     }
+//})
